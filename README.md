@@ -1,1 +1,0 @@
-# konvik-bot-father-service
