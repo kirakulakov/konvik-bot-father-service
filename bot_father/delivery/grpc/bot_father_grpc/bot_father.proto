@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "github.com/kirakulakov/konvik-bot-father-service/delivery/grpc/bot_father_grpc";
+
+package bot_father;
+
+import "google/protobuf/timestamp.proto";
+
+message GetBotRequest{
+    int64 id = 1;
+  }
+
+message GetBotResponse{
+    int64 id = 1;
+    google.protobuf.Timestamp created_at = 2;
+    google.protobuf.Timestamp updated_at = 3;
+    string name = 4;
+}
+
+service BotFather{
+    rpc GetBot(GetBotRequest) returns (GetBotResponse) {}
+}
